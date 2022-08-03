@@ -1,6 +1,6 @@
 import axios from "axios";
 const rootUrl =
-  process.env.NODE_ENV !== "production" ? "" : "http://localhost:8000";
+  process.env.NODE_ENV === "production" ? "" : "http://localhost:8000";
 const userEP = rootUrl + "/api/v1/user";
 const transactionEP = rootUrl + "/api/v1/transaction";
 
