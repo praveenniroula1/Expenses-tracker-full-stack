@@ -1,7 +1,9 @@
+import "dotenv/config";
 import express from "express";
 const app = express();
 import cors from "cors";
 const PORT = 8000;
+import path from "path";
 
 // db connect
 import { connectDB } from "./src/config/dbConfig.js";
@@ -18,10 +20,13 @@ import { authMiddleWare } from "./src/middleware/authMiddleWare.js";
 app.use("/api/v1/user", userRouter);
 app.use("/api/v1/transaction", authMiddleWare, transactionRouter);
 
+const __dirname = path.resolve();
+app.use(express.static(path.join(__dirname, "/client/build")));
+
 // Server side rendering
 app.use("/", (req, res, next) => {
   try {
-    res.send("<h1>Comming soon ... </h1>");
+    res.sendFile(path.join(__dirname, "/client/build/index.html"));
   } catch (error) {
     next(error);
   }
