@@ -1,0 +1,26 @@
+.App {
+  background-color: rgba(104, 143, 189, 0.799);
+  min-height: 150vh;
+}
+.Navbar {
+  background-color: rgba(118, 75, 55, 0.644);
+}
+.nav-link {
+  color: wheat;
+}
+.login-page {
+  width: 30rem;
+}
+.login,
+.register {
+  display: block;
+  margin: 0 auto;
+  width: 30rem;
+}
+.hero-table {
+  background-color: rgba(255, 170, 0, 0.312);
+  /* min-height: 20vh;
+  max-width: 70vw;
+  display: block;
+  margin: 0 auto; */
+}
